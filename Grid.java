@@ -15,8 +15,9 @@ public class Grid{
         }
         return sprite.getThird();
     }
-    // Broken right now
+    /* Broken right now
     public String toString(){
         return "| +"sprite+" |";
     }
+    */
 }
