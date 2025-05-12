@@ -34,7 +34,7 @@ public class Main extends Thread{
     thread.start();
 
     //Printing out the field
-    while(true){}
+    while(true){
       for(int row = 0; row < field.length; row++){ 
         for(int sectRow = 0; sectRow < 3; sectRow++){
           for(int col = 0; col < field[0].length; col++){
