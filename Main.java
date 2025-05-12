@@ -1,6 +1,7 @@
 public class Main extends Thread{
   public static void main(String[] args){
     System.out.println("Field Test");
+    //Maybe change to a 2D array of Arraylists containing Grid objects to handle multiple skeletons of the same tile
     Grid[][] field = new Grid[5][9];
     //Just testing out the field generation
     for(int row = 0; row < field.length; row++){
