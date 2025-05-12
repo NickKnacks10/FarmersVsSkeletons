@@ -20,4 +20,9 @@ public class Main{
       System.out.println("\n");
     }
   }
+
+  public static void clearConsole(){ //May or may not work; have to test at home
+    System.out.print("\033[H\033[2J");
+    System.out.flush();
+  }
 }
