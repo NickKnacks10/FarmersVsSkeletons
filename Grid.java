@@ -1,8 +1,10 @@
 public class Grid{
     private Icon sprite;
+    private String id;
 
-    public Grid(String spriteStrFirstRow, String spriteStrSecondRow, String spriteStrThirdRow){
+    public Grid(String spriteStrFirstRow, String spriteStrSecondRow, String spriteStrThirdRow, String id){
         sprite = new Icon(spriteStrFirstRow,spriteStrSecondRow,spriteStrThirdRow);
+        this.id = id;
     }
 
     //Prerequisite: pos == 0, 1, or 2 
@@ -15,9 +17,8 @@ public class Grid{
         }
         return sprite.getThird();
     }
-    /* Broken right now
-    public String toString(){
-        return "| +"sprite+" |";
+
+    public String getId(){
+        return id;
     }
-    */
 }

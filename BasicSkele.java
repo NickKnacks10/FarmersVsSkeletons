@@ -6,6 +6,6 @@ public class BasicSkele extends Skele{
         "  |  ", 
         "  ^  ",
         //health, speed, damage, attackSpeed
-        250, 100, 50, 100);
+        250, 100, 50, 100,"skeleBasic" + createIdNum());
     }
 }
