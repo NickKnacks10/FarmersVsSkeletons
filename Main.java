@@ -51,14 +51,13 @@ public class Main extends Thread{
         // TODO Auto-generated catch block
         e.printStackTrace();
       }
+      System.out.println("");
       clearConsole();
     }
   }
 
-  public static void clearConsole(){ //May or may not work; have to test at home
-    System.out.print("\033[H\033[2J");  
-    System.out.flush();  
-
+  public static void clearConsole(){ //Thank you, random Youtube Shorts youtuber (adam bien)
+    System.out.print("\033c"); 
   }
 
   public void run(){
