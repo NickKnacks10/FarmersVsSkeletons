@@ -26,7 +26,7 @@ public class Main extends Thread{
     for(int row = 0; row < field.length; row++){
       for(int col = 0; col < field[0].length; col++){
         //5 Characters long?
-        field[row][col] = new Grid("     ", "     ", "     ");
+        field[row][col] = new Grid("     ", " ___ ", "     ");
       }
     }
     //Testing threads here; No idea if this works yet
@@ -44,14 +44,21 @@ public class Main extends Thread{
         }
         System.out.println("\n");
       }
-      Thread.sleep(5000);
+      //To clarify: This try/catch was added by an AI
+      try {
+        Thread.sleep(5000);
+      } catch (InterruptedException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
       clearConsole();
     }
   }
 
   public static void clearConsole(){ //May or may not work; have to test at home
-    System.out.print("\033[H\033[2J");
-    System.out.flush();
+    System.out.print("\033[H\033[2J");  
+    System.out.flush();  
+
   }
 
   public void run(){
