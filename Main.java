@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 
 public class Main{
-
-  
-
   public static void main(String[] args){
     //Maybe change to a 2D array of Arraylists containing Grid objects to handle multiple skeletons of the same tile
     ArrayList<Grid>[][] field = new ArrayList[5][9];;
