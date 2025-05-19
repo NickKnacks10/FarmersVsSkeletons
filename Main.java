@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Main{
   public static void main(String[] args){
     //Maybe change to a 2D array of Arraylists containing Grid objects to handle multiple skeletons of the same tile
-    ArrayList<Grid>[][] field = new ArrayList[5][9];;
+    ArrayList<Grid>[][] field = new ArrayList[5][9];
     
     for(int row = 0; row < field.length; row++){
       for(int col = 0; col < field[0].length; col++){
