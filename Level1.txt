@@ -1,0 +1,3 @@
+*Ignore line
+*Attempt to use 0001 as id for basic skeleton
+0001 0

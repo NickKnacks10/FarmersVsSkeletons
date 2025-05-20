@@ -1,4 +1,4 @@
-public class BasicSkele extends Skele{
+public class BasicSkele extends Skele implements Runnable{
     
     public BasicSkele(){
         super(
@@ -7,5 +7,9 @@ public class BasicSkele extends Skele{
         "  ^  ",
         //health, speed, damage, attackSpeed
         250, 100, 50, 100,"skeleBasic" + createIdNum());
+    }
+
+    public void run(){
+        System.out.println("This works!");
     }
 }
