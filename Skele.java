@@ -1,6 +1,5 @@
-import java.util.ArrayList;
 
-public class Skele extends Grid{
+public class Skele extends Grid implements Runnable{
     public static int idNum = 0;
     private int health;
     private int speed; //As a percent
@@ -27,19 +26,19 @@ public class Skele extends Grid{
     }
 
     /* Finds where the current skeleton is, removes it from its previous arraylist, and puts it in the next adjacent one */
-    public void move(ArrayList<Grid>[][] field){
+    public void move(){
         //TODO: Add interactions with farmers
         int curPos = 0;
-        for(int row = 0; row < field.length; row++){
-            for(int col = 0; col < field[0].length; col++){
-                for(int index = 0; index < field[row][col].size(); index++){
-                    if(field[row][col].get(index).getId().equals(this.getId())){
+        for(int row = 0; row < Main.field.length; row++){
+            for(int col = 0; col < Main.field[0].length; col++){
+                for(int index = 0; index < Main.field[row][col].size(); index++){
+                    if(Main.field[row][col].get(index).getId().equals(this.getId())){
                         curPos = index;
                     }
                 }
             }
         }
-        field[rowIndex][colIndex-1].add(field[rowIndex][colIndex].remove(curPos));
+        Main.field[rowIndex][colIndex-1].add(Main.field[rowIndex][colIndex].remove(curPos));
     }
 
     public static String createIdNum(){
@@ -50,5 +49,17 @@ public class Skele extends Grid{
         }
         strId += idNum;
         return strId;
+    }
+
+    public void run() {
+        while (true) { 
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            move();  
+        }
     }
 }

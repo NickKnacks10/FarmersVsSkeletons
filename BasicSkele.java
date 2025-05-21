@@ -9,7 +9,5 @@ public class BasicSkele extends Skele implements Runnable{
         250, 100, 50, 100,"skeleBasic" + createIdNum());
     }
 
-    public void run(){
-        System.out.println("This works!");
-    }
+    
 }

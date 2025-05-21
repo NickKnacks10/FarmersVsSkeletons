@@ -9,11 +9,12 @@ public abstract class LevelReader implements Runnable{
             Scanner levelReader = new Scanner(level);
             while (levelReader.hasNextLine()) {
                 String data = levelReader.nextLine();
-                if(data.substring(0,2).equals("*")){
+                if(data.substring(0,1).equals("*")){
                     continue;
                 }
                 if(data.substring(0,4).equals("0001")){
                     Skele ske = new BasicSkele();
+                    Main.field[Integer.parseInt(data.substring(5,6))][8].add(ske);
                     Thread thr = new Thread(ske);
                     thr.start();
                 }

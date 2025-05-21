@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 
 public class Main{
+  
+  public static ArrayList<Grid>[][] field = new ArrayList[5][9];
   public static void main(String[] args){
     //Maybe change to a 2D array of Arraylists containing Grid objects to handle multiple skeletons of the same tile
-    ArrayList<Grid>[][] field = new ArrayList[5][9];
     
     for(int row = 0; row < field.length; row++){
       for(int col = 0; col < field[0].length; col++){
@@ -17,7 +18,7 @@ public class Main{
         field[row][col].add(new Grid("     ", " ___ ", "     ", ""));
       }
     }
-
+    LevelReader.levelRunner();
     //Printing out the field
     while(true){
       for(int row = 0; row < field.length; row++){ 
@@ -42,7 +43,8 @@ public class Main{
   }
 
   public static void clearConsole(){ //Thank you, random Youtube Shorts youtuber (adam bien)
-    System.out.print("\033c"); 
+    //System.out.print("\033c"); 
+    //Set whatever rowIndex and colIndex is, and fix the out of bounds
   }
 
 }
