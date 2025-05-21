@@ -17,6 +17,11 @@ public class Skele extends Grid implements Runnable{
         this.attackSpeed = attackSpeed;
     }
 
+    public void setPosition(int row, int col){
+        rowIndex = row;
+        colIndex = col;
+    }
+
     public void attack(){
         //
     }
@@ -29,13 +34,10 @@ public class Skele extends Grid implements Runnable{
     public void move(){
         //TODO: Add interactions with farmers
         int curPos = 0;
-        for(int row = 0; row < Main.field.length; row++){
-            for(int col = 0; col < Main.field[0].length; col++){
-                for(int index = 0; index < Main.field[row][col].size(); index++){
-                    if(Main.field[row][col].get(index).getId().equals(this.getId())){
-                        curPos = index;
-                    }
-                }
+        
+        for(int index = 0; index < Main.field[rowIndex][colIndex].size(); index++){
+            if(Main.field[rowIndex][colIndex].get(index).getId().equals(this.getId())){
+                curPos = index;
             }
         }
         Main.field[rowIndex][colIndex-1].add(Main.field[rowIndex][colIndex].remove(curPos));

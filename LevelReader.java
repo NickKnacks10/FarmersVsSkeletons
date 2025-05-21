@@ -15,6 +15,7 @@ public abstract class LevelReader implements Runnable{
                 if(data.substring(0,4).equals("0001")){
                     Skele ske = new BasicSkele();
                     Main.field[Integer.parseInt(data.substring(5,6))][8].add(ske);
+                    ske.setPosition(Integer.parseInt(data.substring(5,6)), 8);
                     Thread thr = new Thread(ske);
                     thr.start();
                 }

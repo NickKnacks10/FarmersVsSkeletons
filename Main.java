@@ -16,6 +16,7 @@ public class Main{
       for(int col = 0; col < field[0].length; col++){
         //5 Characters long?
         field[row][col].add(new Grid("     ", " ___ ", "     ", ""));
+        //TODO Add a thing to take way the need for these placeholder grid objects
       }
     }
     LevelReader.levelRunner();
