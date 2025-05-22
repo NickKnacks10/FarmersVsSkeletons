@@ -33,14 +33,19 @@ public class Skele extends Grid implements Runnable{
     /* Finds where the current skeleton is, removes it from its previous arraylist, and puts it in the next adjacent one */
     public void move(){
         //TODO: Add interactions with farmers
-        int curPos = 0;
+        int curPos = -1;
         
         for(int index = 0; index < Main.field[rowIndex][colIndex].size(); index++){
             if(Main.field[rowIndex][colIndex].get(index).getId().equals(this.getId())){
                 curPos = index;
             }
         }
-        Main.field[rowIndex][colIndex-1].add(Main.field[rowIndex][colIndex].remove(curPos));
+        if(curPos != -1){
+            Main.field[rowIndex][colIndex-1].add(Main.field[rowIndex][colIndex].remove(curPos));
+        } else {
+            System.out.println("Something went wrong!");
+        }
+        
     }
 
     public static String createIdNum(){
