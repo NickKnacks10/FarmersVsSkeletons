@@ -4,28 +4,29 @@ public class Main{
   
   public static ArrayList<Grid>[][] field = new ArrayList[5][9];
   public static void main(String[] args){
-    //Maybe change to a 2D array of Arraylists containing Grid objects to handle multiple skeletons of the same tile
-    
+    //Creating field
     for(int row = 0; row < field.length; row++){
       for(int col = 0; col < field[0].length; col++){
         field[row][col] = new ArrayList<Grid>();
       }
     }
 
-    for(int row = 0; row < field.length; row++){
-      for(int col = 0; col < field[0].length; col++){
-        //5 Characters long?
-        field[row][col].add(new Grid("     ", " ___ ", "     ", ""));
-        //TODO Add a thing to take way the need for these placeholder grid objects
-      }
-    }
+    
+    //5 Characters long?
+    Grid emptyGrid = new Grid("     ", " ___ ", "     ", "");
+    //TODO Add a thing to take way the need for these placeholder grid objects
+    
     LevelReader.levelRunner();
     //Printing out the field
     while(true){
       for(int row = 0; row < field.length; row++){ 
         for(int sectRow = 0; sectRow < 3; sectRow++){
           for(int col = 0; col < field[0].length; col++){
-            System.out.print("|" + field[sectRow][col].get(0).getSpriteParts(sectRow) + "|   ");
+            if(!(field[row][col].size() <= 0)){
+              System.out.print("|" + field[row][col].get(0).getSpriteParts(sectRow) + "|   ");
+            } else {
+              System.out.print("|" + emptyGrid.getSpriteParts(sectRow) + "|   ");
+            }
           }
           System.out.println();
         }
@@ -33,7 +34,7 @@ public class Main{
       }
       //To clarify: This try/catch was added by an AI
       try {
-        Thread.sleep(5000);
+        Thread.sleep(500);
       } catch (InterruptedException e) {
         // TODO Auto-generated catch block
         e.printStackTrace();
@@ -44,8 +45,7 @@ public class Main{
   }
 
   public static void clearConsole(){ //Thank you, random Youtube Shorts youtuber (adam bien)
-    //System.out.print("\033c"); 
-    //Set whatever rowIndex and colIndex is, and fix the out of bounds
+    System.out.print("\033c"); 
   }
 
 }

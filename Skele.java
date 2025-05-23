@@ -42,6 +42,7 @@ public class Skele extends Grid implements Runnable{
         }
         if(curPos != -1){
             Main.field[rowIndex][colIndex-1].add(Main.field[rowIndex][colIndex].remove(curPos));
+            colIndex--;
         } else {
             System.out.println("Something went wrong!");
         }
@@ -61,7 +62,7 @@ public class Skele extends Grid implements Runnable{
     public void run() {
         while (true) { 
             try {
-                Thread.sleep(1000);
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
