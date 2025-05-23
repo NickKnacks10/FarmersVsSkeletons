@@ -12,9 +12,8 @@ public class Main{
     }
 
     
-    //5 Characters long?
+    //Each sprite 5 characters long?
     Grid emptyGrid = new Grid("     ", " ___ ", "     ", "");
-    //TODO Add a thing to take way the need for these placeholder grid objects
     
     LevelReader.levelRunner();
     //Printing out the field

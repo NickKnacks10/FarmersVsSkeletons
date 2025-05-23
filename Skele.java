@@ -62,7 +62,7 @@ public class Skele extends Grid implements Runnable{
     public void run() {
         while (true) { 
             try {
-                Thread.sleep(3000);
+                Thread.sleep((int)(3000 * (speed*1.0/100)));
             } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
