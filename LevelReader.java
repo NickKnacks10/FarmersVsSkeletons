@@ -21,7 +21,7 @@ public abstract class LevelReader implements Runnable{
                     Thread thr = new Thread(ske);
                     thr.start();
                     skeleCount++
-                } else if(data.substring(0,3).equals("end"){
+                } else if(data.substring(0,3).equals("end")){
                     //TODO add a timer for the wave starting thing
                     if(data.substring(4,8).equals("wave")){
                         if(skeleCount <= maxSkeleCount/2){
