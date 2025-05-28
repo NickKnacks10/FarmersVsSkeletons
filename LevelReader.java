@@ -20,12 +20,19 @@ public abstract class LevelReader implements Runnable{
                     ske.setPosition(rowThing, 8);
                     Thread thr = new Thread(ske);
                     thr.start();
-                    skeleCount++
+                    skeleCount++;
                 } else if(data.substring(0,3).equals("end")){
-                    //TODO add a timer for the wave starting thing
+                    //Note: Can switch to System.nanoTime if needed
+                    double savedTime = System.currentTimeMillis();
                     if(data.substring(4,8).equals("wave")){
-                        if(skeleCount <= maxSkeleCount/2){
-                            //To add
+                        double curTime = System.currentTimeMillis();
+                        while(!(skeleCount <= maxSkeleCount/2 || curTime-savedTime >= 15000)){
+                            try {
+                                Thread.sleep(500);
+                                curTime = System.currentTimeMillis();
+                            } catch (Exception e) {
+                                System.out.println("error: wave end timer failed");
+                            }
                         }
                     }
                 }
