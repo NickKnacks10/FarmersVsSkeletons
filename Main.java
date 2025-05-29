@@ -15,7 +15,10 @@ public class Main{
     //Each sprite 5 characters long?
     Grid emptyGrid = new Grid("     ", " ___ ", "     ", "");
     
-    LevelReader.levelRunner();
+    LevelReader levelRunner = new LevelReader();
+    Thread level = new Thread(levelRunner);
+    level.start();
+    //LevelReader.levelRunner();
     //Printing out the field
     while(true){
       for(int row = 0; row < field.length; row++){ 

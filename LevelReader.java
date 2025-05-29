@@ -2,7 +2,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public abstract class LevelReader implements Runnable{
+public class LevelReader implements Runnable{
+    public void run(){
+        levelRunner();
+    }
+    
     static void levelRunner(){
         try {
             File level = new File("Level1.txt");
