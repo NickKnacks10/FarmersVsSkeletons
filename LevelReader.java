@@ -18,6 +18,7 @@ public class LevelReader implements Runnable{
                 if(data.substring(0,1).equals("*")){
                     continue;
                 } else if(data.substring(0,4).equals("0001")){
+                    //Make this a custom method with the txt files starting with "create"?
                     Skele ske = new BasicSkele();
                     int rowThing = Integer.parseInt(data.substring(5,6));
                     Main.field[rowThing][8].add(ske);
@@ -45,6 +46,10 @@ public class LevelReader implements Runnable{
             System.out.println("Something goofed up.");
             e.printStackTrace();
         }
+    }
+
+    public static void createSkele(int identity){
+
     }
 }
 
