@@ -18,7 +18,7 @@ public class Main{
     LevelReader levelRunner = new LevelReader();
     Thread level = new Thread(levelRunner);
     level.start();
-    //LevelReader.levelRunner();
+    
     //Printing out the field
     while(true){
       for(int row = 0; row < field.length; row++){ 
