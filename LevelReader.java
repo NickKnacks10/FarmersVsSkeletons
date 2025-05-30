@@ -15,17 +15,13 @@ public class LevelReader implements Runnable{
             int maxSkeleCount = 0;
             while (levelReader.hasNextLine()) {
                 String data = levelReader.nextLine();
-                if(data.substring(0,1).equals("*")){
+                if(data.substring(0,1).equals("*") || data.equals("")){
                     continue;
-                } else if(data.substring(0,4).equals("0001")){
+                } else if(data.substring(0,4).equals("cre")){
                     //Make this a custom method with the txt files starting with "create"?
-                    Skele ske = new BasicSkele();
-                    int rowThing = Integer.parseInt(data.substring(5,6));
-                    Main.field[rowThing][8].add(ske);
-                    ske.setPosition(rowThing, 8);
-                    Thread thr = new Thread(ske);
-                    thr.start();
-                    skeleCount++;
+                    createSkele(data.substring(5,9));
+                    //Check if this actually works
+                    
                 } else if(data.substring(0,3).equals("end")){
                     //Note: Can switch to System.nanoTime if needed
                     double savedTime = System.currentTimeMillis();
@@ -49,7 +45,31 @@ public class LevelReader implements Runnable{
     }
 
     public static void createSkele(int identity){
-
+        Skele ske;
+        try{
+            switch(identity){
+                case "0001"{
+                    ske = new BasicSkele();
+                    break;
+                }
+                case "0002"{
+                    ske = new LeatherSkele();
+                    break;
+                }
+                case "0003"{
+                    ske = new IronSkele();
+                    break;
+                }
+            }
+            int rowThing = Integer.parseInt(data.substring(5,6));
+            Main.field[rowThing][8].add(ske);
+            ske.setPosition(rowThing, 8);
+            Thread thr = new Thread(ske);
+            thr.start();
+            skeleCount++;
+        } catch (Exception e){
+            System.out.println("Skele creation failed");
+        }
     }
 }
 

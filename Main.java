@@ -10,7 +10,6 @@ public class Main{
         field[row][col] = new ArrayList<Grid>();
       }
     }
-
     
     //Each sprite 5 characters long?
     Grid emptyGrid = new Grid("     ", " ___ ", "     ", "");

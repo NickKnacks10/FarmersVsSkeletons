@@ -1,6 +1,8 @@
 *Ignore line
-*Attempt to use 0001 as id for basic skeleton
-0001 0
+*0001 | id for basic skeleton
+
+cre 0001 0
 end wave
-0001 1
-0001 2
+
+cre 0001 1
+cre 0001 2
