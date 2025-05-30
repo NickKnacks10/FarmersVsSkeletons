@@ -3,6 +3,8 @@ import java.util.ArrayList;
 public class Main{
   
   public static ArrayList<Grid>[][] field = new ArrayList[5][9];
+  public boolean alive = true;
+
   public static void main(String[] args){
     //Creating field
     for(int row = 0; row < field.length; row++){
@@ -19,7 +21,7 @@ public class Main{
     level.start();
     
     //Printing out the field
-    while(true){
+    while(alive){
       for(int row = 0; row < field.length; row++){ 
         for(int sectRow = 0; sectRow < 3; sectRow++){
           for(int col = 0; col < field[0].length; col++){
@@ -43,6 +45,9 @@ public class Main{
       System.out.println("");
       clearConsole();
     }
+
+    clearConsole();
+    System.out.print("Oops, the skeletons got to your house! \nGame Over");
   }
 
   public static void clearConsole(){ //Thank you, random Youtube Shorts youtuber (adam bien)
