@@ -1,16 +1,16 @@
 *Ignore line
 *0001 | id for basic skeleton
-
+*
 cre 0001 0
 end wave
-
+*
 cre 0001 1
 cre 0001 2
 end wave
-
+*
 cre 0002 4
 end wave
-
+*
 cre 0002 3
 cre 0001 1
 end wave

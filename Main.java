@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Main{
   
   public static ArrayList<Grid>[][] field = new ArrayList[5][9];
-  public boolean alive = true;
+  public static boolean alive = true;
 
   public static void main(String[] args){
     //Creating field
@@ -37,7 +37,7 @@ public class Main{
       }
       //To clarify: This try/catch was added by an AI
       try {
-        Thread.sleep(500);
+        Thread.sleep(5000);
       } catch (InterruptedException e) {
         // TODO Auto-generated catch block
         e.printStackTrace();
@@ -51,7 +51,7 @@ public class Main{
   }
 
   public static void clearConsole(){ //Thank you, random Youtube Shorts youtuber (adam bien)
-    System.out.print("\033c"); 
+    //System.out.print("\033c"); 
   }
 
 }
