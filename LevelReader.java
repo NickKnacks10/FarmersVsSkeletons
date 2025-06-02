@@ -20,11 +20,11 @@ public class LevelReader implements Runnable{
                 String data = levelReader.nextLine();
                 if(data.substring(0,1).equals("*")){
                     continue;
-                } else if(data.substring(0,4).equals("cre")){
+                } else if(data.substring(0,3).equals("cre")){
                     //Make this a custom method with the txt files starting with "create"?
-                    createSkele(Integer.parseInt(data.substring(5,9)), data.substring(9,10));
-                    //Check if this actually works
-                    
+                    createSkele(Integer.parseInt(data.substring(4,5)), data.substring(6,7));
+                    //System.out.println("Skeleton created");
+                    //^For testing purposes
                 } else if(data.substring(0,3).equals("end")){
                     //Note: Can switch to System.nanoTime if needed
                     double savedTime = System.currentTimeMillis();
