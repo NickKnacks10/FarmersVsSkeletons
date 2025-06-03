@@ -1,7 +1,7 @@
 *Ignore line
 *0001 | id for basic skeleton
 *
-cre 1 0
+cre 3 0
 end wave
 *
 cre 1 1

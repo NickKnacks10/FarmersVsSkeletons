@@ -1,6 +1,6 @@
 
 public class Skele extends Grid implements Runnable{
-    public static int idNum = 0;
+    
     private int health;
     private int speed; //As a percent
     private int damage;

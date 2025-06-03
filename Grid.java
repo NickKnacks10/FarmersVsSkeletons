@@ -1,4 +1,5 @@
 public class Grid{
+    public static int idNum = 0;
     private Icon sprite;
     private String id;
 
